@@ -35,7 +35,8 @@ module.exports.routes = {
   'get /login': 'AuthController.login',
   'get /logout': 'AuthController.logout',
   'get /register': 'AuthController.register',
-
+  'get /disconnect': 'AuthController.disconnect',
+  
   'post /auth/local': 'AuthController.callback',
   'post /auth/local/:action': 'AuthController.callback',
 
@@ -45,6 +46,10 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   }
+  
+//   'get /welcome': {
+//     view: 'welcome'
+//   }
 
   /***************************************************************************
   *                                                                          *

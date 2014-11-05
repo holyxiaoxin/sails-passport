@@ -1,0 +1,25 @@
+<div><a href="/logout">Log out</a>&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
+<!--   <a href="/disconnect">Delete Account</a> -->
+</div><hr>
+<div>Hello, <%= req.user.username %>!</div>
+<div>Your user id is, <%= req.user.id %>!</div>
+<div>Your email is, <%= req.user.email %>!</div><hr>
+
+<div>Want to link your account to your social accounts? Click below!</div></br><hr>
+
+<div>This won't work</div>
+<% _.each(providers, function(provider) { %>
+    <a href="/auth/<%= provider.slug %>"><%= provider.name %><br></a>
+<% }); %>
+
+<hr>
+
+<!-- ******************************************************************************************
+While logged in, execute /auth/<provider>/connect to add another third-party passport.        *
+While logged in, execute /auth/local/connect?password=<password> to add a local passport.     *
+******************************************************************************************* --> 
+
+<% _.each(providers, function(provider) { %>
+    <a href="/auth/<%= provider.slug %>/connect"><%= provider.name %><br></a>
+<% }); %>
+
